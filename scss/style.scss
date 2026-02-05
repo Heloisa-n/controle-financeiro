@@ -1,0 +1,182 @@
+$cor-fundo: #f0f2f5;
+$cor-primaria: #2d3436;
+$cor-positivo: #2ecc71;
+$cor-negativo: #e74c3c;
+$cor-branca: #ffffff;
+$cor-separador: #eee;
+$cor-borda: #dedede;
+$cor-cinza-quente: #777;
+$cor-azul: rgb(22, 6, 189);
+$sombra: 0 1px 3px rgba(0, 0, 0, 0.12);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+    background-color: $cor-fundo;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    transition: all 1s ease
+}
+
+.container {
+    width: 100%;       
+    max-width: 450px;  
+    margin: 0 auto;    
+    padding: 0 10px;
+
+    h1{
+        text-align: center;
+    }
+
+}
+
+.container-resumo {
+    
+    background-color: $cor-branca;
+    box-shadow: $sombra;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap; 
+
+    div {
+        flex: 1;
+        &:first-child { border-right: 1px solid $cor-separador; }
+    }
+
+    .positivo { color: $cor-positivo; font-weight: bold; }
+    .negativo { color: $cor-negativo; font-weight: bold; }
+
+    // telas pequenas:
+    @media (max-width: 350px) {
+    flex-direction: column;
+
+        div:first-child {
+            border-right: none;
+            border-bottom: 1px solid $cor-separador;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.container-saldo{
+    gap: 1;
+    border-top: 1px solid $cor-primaria;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h4{
+        padding-top: 10px;
+    }
+    
+    h1{
+        padding-bottom: 10px;
+    }
+}
+
+.container-historico{
+    border-top: 1px solid $cor-primaria;
+
+    h3{
+        padding-top: 10px;
+    }
+
+    ul{
+       
+        li{
+            
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+
+            .container_historico_botoes{
+                
+                width: 10vw;
+                align-items: end;
+                text-align: center;
+
+
+                .btn_historico_excluir{
+                    color:$cor-negativo
+                }
+                .btn_historico_editar{
+                    color:$cor-azul
+                }
+
+                button{
+                    text-align: center;
+                    font-weight: bold;
+                    padding: 2px 5px;
+                    transition: .5s;
+
+                    
+                    &:hover{
+                        font-size: 15px;
+                        transition: .5s;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+.adicionar-transacao {
+
+    margin-top: 30px;
+
+    #formulario {
+
+        .controle-formulario {
+            
+            margin-bottom: 15px;
+            
+            label { display: block; margin-bottom: 5px; font-weight: 600; }
+            
+            input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid $cor-borda;
+                border-radius: 4px;
+            }
+        }
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            transition: all 1s ease;
+
+            &.btn-adicionar {
+                background-color: $cor-primaria;
+                color: $cor-branca;
+                &:hover { background-color: lighten($cor-primaria, 10%); }
+            }
+
+            &.btn-limpar {
+                background-color: transparent;
+                color: $cor-cinza-quente;
+                text-decoration: underline;
+                &:hover { color: $cor-negativo; }
+            }
+        }
+    }
+}

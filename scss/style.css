@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f2f5;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  transition: all 1s ease;
+}
+
+.container {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.container h1 {
+  text-align: center;
+}
+
+.container-resumo {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container-resumo div {
+  flex: 1;
+}
+.container-resumo div:first-child {
+  border-right: 1px solid #eee;
+}
+.container-resumo .positivo {
+  color: #2ecc71;
+  font-weight: bold;
+}
+.container-resumo .negativo {
+  color: #e74c3c;
+  font-weight: bold;
+}
+@media (max-width: 350px) {
+  .container-resumo {
+    flex-direction: column;
+  }
+  .container-resumo div:first-child {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.container-saldo {
+  gap: 1;
+  border-top: 1px solid #2d3436;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container-saldo h4 {
+  padding-top: 10px;
+}
+.container-saldo h1 {
+  padding-bottom: 10px;
+}
+
+.container-historico {
+  border-top: 1px solid #2d3436;
+}
+.container-historico h3 {
+  padding-top: 10px;
+}
+.container-historico ul li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.container-historico ul li .container_historico_botoes {
+  width: 10vw;
+  align-items: end;
+  text-align: center;
+}
+.container-historico ul li .container_historico_botoes .btn_historico_excluir {
+  color: #e74c3c;
+}
+.container-historico ul li .container_historico_botoes .btn_historico_editar {
+  color: rgb(22, 6, 189);
+}
+.container-historico ul li .container_historico_botoes button {
+  text-align: center;
+  font-weight: bold;
+  padding: 2px 5px;
+  transition: 0.5s;
+}
+.container-historico ul li .container_historico_botoes button:hover {
+  font-size: 15px;
+  transition: 0.5s;
+}
+
+.adicionar-transacao {
+  margin-top: 30px;
+}
+.adicionar-transacao #formulario .controle-formulario {
+  margin-bottom: 15px;
+}
+.adicionar-transacao #formulario .controle-formulario label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.adicionar-transacao #formulario .controle-formulario input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+}
+.adicionar-transacao #formulario button {
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  transition: all 1s ease;
+}
+.adicionar-transacao #formulario button.btn-adicionar {
+  background-color: #2d3436;
+  color: #ffffff;
+}
+.adicionar-transacao #formulario button.btn-adicionar:hover {
+  background-color: rgb(68.1818181818, 78.7878787879, 81.8181818182);
+}
+.adicionar-transacao #formulario button.btn-limpar {
+  background-color: transparent;
+  color: #777;
+  text-decoration: underline;
+}
+.adicionar-transacao #formulario button.btn-limpar:hover {
+  color: #e74c3c;
+}/*# sourceMappingURL=style.css.map */
