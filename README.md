@@ -1,4 +1,4 @@
-#Controle Financeiro
+##Controle Financeiro
 
 Dashboard de controle de finanças pessoal desenvolvido para consolidar conhecimentos em manipulação do DOM, lógica de programação e persistência de dados no navegador.
 
