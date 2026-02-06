@@ -23,7 +23,7 @@ Status do Projeto: Em Desenvolvimento (Próxima etapa: Persistência com LocalSt
 
 ---
 
-## 📸 Como ficou o projeto?
+## Como ficou o projeto?
 
 Você pode visualizar o projeto funcionando aqui:  
 [Link do Dashboard](https://heloisa-n.github.io/controle-financeiro/)
