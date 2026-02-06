@@ -4,7 +4,7 @@ Dashboard de controle de finanças pessoal desenvolvido para consolidar conhecim
 
 > **Status do Projeto:** Concluído 
 
----
+--- 
 
 ## Funcionalidades Implementadas
 
@@ -13,7 +13,11 @@ Dashboard de controle de finanças pessoal desenvolvido para consolidar conhecim
 - **Sanitização de Dados:** Padronização automática de nomes (Primeira letra maiúscula) e bloqueio de transações duplicadas.
 - **Histórico Interativo:** Listagem dinâmica com sinalizadores visuais de status (positivo/negativo) e opção de exclusão.
 - **UX Mobile:** Ajustes de viewport e fontes para evitar o zoom indesejado em dispositivos móveis.
+- **Controle de Fluxo do Histórico:** Implementação de barra de rolagem customizada (overflow-y) para manter a interface compacta, independente do número de transações.
+- **Botão de ocasião:** Botão dinâmico "Limpar Lista" que utiliza lógica condicional para aparecer apenas quando há dados no histórico, otimizando o espaço visual.
+- **Reset completo:** Opção de exclusão em massa com confirmação de segurança, limpando simultaneamente o estado da aplicação e o localStorage.
 
+  
 ## Tecnologias e Conceitos
 
 - **HTML5 Semântico:** Estrutura organizada para melhor acessibilidade.
