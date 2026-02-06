@@ -97,6 +97,9 @@ body {
     }
 
     ul{
+
+        max-height: 300px;
+        overflow-y: auto; 
        
         li{
             
@@ -107,15 +110,12 @@ body {
             .container_historico_botoes{
                 
                 width: 10vw;
-                align-items: end;
                 text-align: center;
-
-
+                display: flex;
+                justify-content: end;
+                
                 .btn_historico_excluir{
-                    color:$cor-negativo
-                }
-                .btn_historico_editar{
-                    color:$cor-azul
+                    color:$cor-negativo;
                 }
 
                 button{
@@ -132,6 +132,30 @@ body {
                     
                 }
             }
+        }
+    }
+
+    div{
+
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+
+        .botao_limpa-historico{
+            display: none;
+            border: solid red 1px;
+            border-radius: 4px;
+            padding: 10px;
+            color: $cor-negativo;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 1s ease;
+
+            &:hover { background-color: lighten($cor-negativo, 10%);
+                        color: $cor-branca;
+            }
+
         }
     }
 }

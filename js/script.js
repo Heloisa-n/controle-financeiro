@@ -16,8 +16,9 @@ const despesasNoDisplay = document.querySelector('#dinheiro-negativo');
 const inputDescricao = document.querySelector('#descricao');
 const inputValor = document.querySelector('#valor');
 
-// botão limpar:
+// botões:
 const botaoLimpar = document.querySelector('.btn-limpar');
+const botaoLimpaListaHistorico = document.querySelector('.botao_limpa-historico');
 
 //listas:
 let transacoes = localStorage.getItem('minhas_financas') !== null ? armazenamentoLocal : [];
@@ -72,6 +73,12 @@ function borracha() {
     listaTransacoes.innerHTML = ''; 
     transacoes.forEach(adicionarTransacaoNaLista);
     atualizarValoresDoDisplay();
+
+    if (transacoes.length > 0) {
+        botaoLimpaListaHistorico.style.display = "block";
+    } else {
+        botaoLimpaListaHistorico.style.display = "none";
+    }
 }
 
 function removerTransacao(id) {
@@ -111,7 +118,9 @@ formulario.addEventListener('submit', (e) => {
     if (nomeDaTransacao.trim() === '' || Number(valorDaTransacao) === 0) {
     alert('Por favor, insira um nome válido e um valor diferente de zero!');
     return;
-    }   
+    }
+
+   
 
     // filtros:
     const textoFiltrado = formatarTexto(nomeDaTransacao)
@@ -147,5 +156,16 @@ formulario.addEventListener('submit', (e) => {
 botaoLimpar.addEventListener('click', () => {
     formulario.reset();
 });
+
+botaoLimpaListaHistorico.addEventListener('click',()=>{
+
+    const confirmar = confirm("tem certeza que deseja apagar todos os itens da lista?");
+
+    if(confirmar){
+        transacoes = [];
+        atualizarLocalStorage();
+        borracha();
+    }
+})
 
 borracha();
