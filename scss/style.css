@@ -126,6 +126,7 @@ body {
   padding: 10px;
   border: 1px solid #dedede;
   border-radius: 4px;
+  font-size: 16px;
 }
 .adicionar-transacao #formulario button {
   cursor: pointer;

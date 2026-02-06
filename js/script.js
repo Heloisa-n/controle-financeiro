@@ -1,3 +1,7 @@
+// localStorage
+const armazenamentoLocal = JSON.parse(localStorage.getItem('minhas_financas'));
+
+// formulário:
 const formulario = document.querySelector('#formulario');
 
 // histórico:
@@ -16,10 +20,13 @@ const inputValor = document.querySelector('#valor');
 const botaoLimpar = document.querySelector('.btn-limpar');
 
 //listas:
-let transacoes = [];
+let transacoes = localStorage.getItem('minhas_financas') !== null ? armazenamentoLocal : [];
 
 // funções:
-
+function atualizarLocalStorage() {
+    
+    localStorage.setItem('minhas_financas', JSON.stringify(transacoes));
+}
 
 function formatarTexto(texto){
     return texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase();
@@ -62,7 +69,7 @@ function adicionarTransacaoNaLista(transacao) {
 }
 
 function borracha() {
-    listaTransacoes.innerHTML = ''; // Limpa a lista antes de desenhar
+    listaTransacoes.innerHTML = ''; 
     transacoes.forEach(adicionarTransacaoNaLista);
     atualizarValoresDoDisplay();
 }
@@ -70,7 +77,7 @@ function borracha() {
 function removerTransacao(id) {
    
     transacoes = transacoes.filter(transacao => transacao.id !== id);
-    
+    atualizarLocalStorage();
     borracha(); 
 }
 
@@ -113,6 +120,7 @@ formulario.addEventListener('submit', (e) => {
     if (nomeDuplicado) {
         alert(`A transação "${textoFiltrado}" já está na lista!`);
         formulario.reset();
+        inputDescricao.focus()
         return;
     }
 
@@ -125,7 +133,7 @@ formulario.addEventListener('submit', (e) => {
     };
 
     transacoes.push(novaTransacao);
-
+    atualizarLocalStorage();
     borracha();
 
     // Limpa os campos após adicionar
@@ -140,3 +148,4 @@ botaoLimpar.addEventListener('click', () => {
     formulario.reset();
 });
 
+borracha();
